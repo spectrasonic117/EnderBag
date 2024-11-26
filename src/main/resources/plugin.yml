@@ -1,0 +1,19 @@
+name: enderchest
+version: "${version}"
+main: com.spectrasonic.enderchest.Main
+api-version: "1.21"
+authors: [Spectrasonic]
+commands:
+    enderchest:
+        usage: /enderchest
+        aliases:
+            - ec
+            - echest
+            - ebag
+            - enderbag
+        description: Open your EnderChest
+        permission: enderchest.use
+permissions:
+    enderchest.use:
+        description: Allows players to open their EnderChest
+        default: op
