@@ -12,8 +12,14 @@ commands:
             - ebag
             - enderbag
         description: Open your EnderChest
-        permission: enderchest.use
+        permission: enderbag.use
 permissions:
-    enderchest.use:
+    enderbag.use:
         description: Allows players to open their EnderChest
+        default: op
+    enderbag.craft:
+        description: Allows crafting of EnderBag
+        default: true
+    enderbag.admin:
+        description: Allows admin commands
         default: op

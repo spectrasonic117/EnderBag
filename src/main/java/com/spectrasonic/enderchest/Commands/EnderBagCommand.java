@@ -21,25 +21,25 @@ public class EnderBagCommand implements CommandExecutor, TabCompleter {
             @NonNull String label,
             @NonNull String[] args
     ) {
-        if (!sender.hasPermission("enderchest.admin")) {
-            sender.sendMessage("§cYou don't have permission to use this command.");
+        if (!sender.hasPermission("enderbag.admin")) {
+            MessageUtils.sendMessage(sender, "&cYou don't have permission to use this command.");
             return true;
         }
 
         if (args.length != 2 || !args[0].equalsIgnoreCase("give")) {
-            sender.sendMessage("§cUsage: /enderbag give <player>");
+            MessageUtils.sendMessage(sender, "&cUsage: /enderbag give <player>");
             return true;
         }
 
         Player target = Bukkit.getPlayer(args[1]);
         if (target == null) {
-            sender.sendMessage("§cPlayer not found.");
+            MessageUtils.sendMessage(sender, "&cPlayer not found.");
             return true;
         }
 
         target.getInventory().addItem(EnderBagService.createEnderBag());
-        target.sendMessage("§aYou received an EnderBag!");
-        sender.sendMessage("§aGave EnderBag to " + target.getName());
+        MessageUtils.sendMessage(sender, "&aGave EnderBag to " + target.getName());
+        MessageUtils.sendMessage(target, "&aYou received an EnderBag!");
 
         return true;
     }

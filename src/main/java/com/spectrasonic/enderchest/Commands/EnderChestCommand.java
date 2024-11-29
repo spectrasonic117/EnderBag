@@ -1,6 +1,7 @@
 package com.spectrasonic.enderchest.Commands;
 
 import lombok.NonNull;
+import com.spectrasonic.enderchest.Utils.MessageUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,9 +10,9 @@ import org.bukkit.entity.Player;
 public class EnderChestCommand implements CommandExecutor {
     @Override
     public boolean onCommand(
-        @NonNull CommandSender sender, 
-        @NonNull Command command, 
-        @NonNull String label, 
+        @NonNull CommandSender sender,
+        @NonNull Command command,
+        @NonNull String label,
         @NonNull String[] args
     ) {
         if (!(sender instanceof Player player)) {
