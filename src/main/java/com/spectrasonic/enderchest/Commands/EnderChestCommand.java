@@ -16,12 +16,12 @@ public class EnderChestCommand implements CommandExecutor {
         @NonNull String[] args
     ) {
         if (!(sender instanceof Player player)) {
-            sender.sendMessage("§cOnly players can use this command.");
+            MessageUtils.sendMessage(sender, "&cOnly players can use this command.");
             return true;
         }
 
         if (!player.hasPermission("enderchest.use")) {
-            player.sendMessage("§cYou do not have permission to use this command.");
+            MessageUtils.sendMessage(player, "&cYou do not have permission to use this command.");
             return true;
         }
 

@@ -10,6 +10,8 @@ import org.bukkit.inventory.ItemStack;
 
 import com.spectrasonic.enderchest.Utils.MessageUtils;
 
+import java.util.Objects;
+
 public class EnderChestInteractionListener implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
@@ -20,7 +22,7 @@ public class EnderChestInteractionListener implements Listener {
              event.getAction() == Action.RIGHT_CLICK_BLOCK) &&
             mainHandItem.getType() == Material.PAPER &&
             mainHandItem.hasItemMeta() &&
-            mainHandItem.getItemMeta().hasCustomModelData() &&
+            Objects.requireNonNull(mainHandItem.getItemMeta()).hasCustomModelData() &&
             mainHandItem.getItemMeta().getCustomModelData() == 1000
         ) {
             if (!player.hasPermission("enderchest.use")) {
@@ -29,7 +31,7 @@ public class EnderChestInteractionListener implements Listener {
             }
 
             player.openInventory(player.getEnderChest());
-            event.setCancelled(true); // Prevent further interaction
+            event.setCancelled(true);
         }
     }
 }

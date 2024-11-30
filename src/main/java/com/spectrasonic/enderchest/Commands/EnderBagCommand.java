@@ -60,7 +60,6 @@ public class EnderBagCommand implements CommandExecutor, TabCompleter {
                     .map(Player::getName)
                     .collect(Collectors.toList());
         }
-
         return completions;
     }
 }

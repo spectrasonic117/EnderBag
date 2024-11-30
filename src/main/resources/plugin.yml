@@ -9,10 +9,14 @@ commands:
         aliases:
             - ec
             - echest
-            - ebag
-            - enderbag
         description: Open your EnderChest
-        permission: enderbag.use
+        permission: enderchest.use
+    enderbag:
+        usage: /enderbag give <player>
+        description: Gives you an EnderBag
+        aliases:
+            - ebag
+        permission: enderbag.admin
 permissions:
     enderbag.use:
         description: Allows players to open their EnderChest
